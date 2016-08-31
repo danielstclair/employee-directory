@@ -20,11 +20,11 @@ Meteor.startup(() => {
 		});
 	}
 
-	Meteor.publish('employees', function() {
+	Meteor.publish('employees', function(per_page) {
 		// Will need to refactor in order to add more records
-		return Employees.find({}, { limit: 20 });
+		return Employees.find({}, { limit: per_page });
 	})
 });
 
 
-//Our server deifnes publications while our client defines subscriptions
+//Our server defines publications while our client defines subscriptions
