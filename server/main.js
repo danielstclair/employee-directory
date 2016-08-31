@@ -19,4 +19,12 @@ Meteor.startup(() => {
 			});
 		});
 	}
+
+	Meteor.publish('employees', function() {
+		// Will need to refactor in order to add more records
+		return Employees.find({}, { limit: 20 });
+	})
 });
+
+
+//Our server deifnes publications while our client defines subscriptions
